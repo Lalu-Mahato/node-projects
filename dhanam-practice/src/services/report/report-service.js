@@ -1,8 +1,9 @@
-const CommonMethod = require('@common-methods');
-const bank = require('./action/bank');
+const CommonMethod = require("@common-methods");
+const loanDetail = require("./action/loan_detail");
 
 exports.trackerReport = async () => {
-    const response = await bank.findAll();
+  // const response = await loanDetail.findAll();
+  const response = await loanDetail.fetch();
 
-    return CommonMethod.successResponse(response);
+  return CommonMethod.successResponse(response);
 };
